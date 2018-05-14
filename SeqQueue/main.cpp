@@ -1,6 +1,6 @@
 #include <iostream>
+#include"SeqQueue.h"
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+int main(){
+    
 }
