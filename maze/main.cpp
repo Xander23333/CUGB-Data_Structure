@@ -34,12 +34,14 @@ void dfs(int i,int j,int len){
     ans0.push_back( node(stax,stay) ); 
     while(x!=desx || y!=desy){
       node p = path[x][y];
-      ans0.push_back( p );       
-      ans[top++] = p;
+      ans0.push_back( p ); 
       x = p.x; y = p.y;
     }
     print_path(ans0);    
-    if (len < top) ans = ans0;
+    if (len < top) {
+      ans = ans0;
+      top = len;
+    }
   }
   else{
     for (int d = 0;d < 4;++d){
@@ -75,9 +77,13 @@ void undfs(){
     // cout<<Stack[topp-1].x<<" "<<Stack[topp-1].y<<" "<<stu[topp-1]<<endl;
     if (Stack[topp-1] == des){
       // cout<<"yes\n";
+      ans0.clear();
       ans0.insert(ans0.end(),Stack,Stack+topp);
       print_path(ans0);    
-      if (topp < top) ans = ans0;
+      if (topp < top) {
+        ans = ans0;
+        top = topp;
+      }
       pop();
     } 
     else{
@@ -99,6 +105,7 @@ int main(){
       cin>>maze[i][j];
   cin>>stax>>stay>>desx>>desy;
 
+  printf("递归方法：\n");
   memset(used,sizeof used,0);
   used[stax][stay] = 1;  
   top = N*N;
@@ -106,6 +113,7 @@ int main(){
   printf("the shortest:\n");  
   print_path(ans);  
 
+  printf("\n非递归方法：\n");
   memset(used,sizeof used,0);
   used[stax][stay] = 1;  
   top = N*N;//top为当前最短路径的长度
