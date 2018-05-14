@@ -30,7 +30,7 @@ void print_path(const vector<node>& ans){
 void dfs(int i,int j,int len){
   if (i==desx && j==desy){
     ans0.clear();
-    int x = stax, y = stay;top = 0;
+    int x = stax, y = stay;
     ans0.push_back( node(stax,stay) ); 
     while(x!=desx || y!=desy){
       node p = path[x][y];
