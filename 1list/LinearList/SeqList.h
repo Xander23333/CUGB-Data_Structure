@@ -5,7 +5,6 @@
 #ifndef UNTITLED_SEQLIST_H
 #define UNTITLED_SEQLIST_H
 
-#include"LinearList.h"
 #include<iostream>
 #include<algorithm>
 template <class T>
