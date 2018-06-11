@@ -8,7 +8,7 @@ int a[]{3,6,2,10,1,8,5,7,4,9};
 int gap = 0;
 void print(){for(int i=0;i<10;++i) cout<<a[i]<<" ";cout<<endl;}
 void qsort(int l,int r){
-  if (l == r-1) return ;
+  if (l >= r-1) return ;
   int pos = rand()%(r-l)+l;
   printf("l = %d r = %d pos = %d key = %d\n",l,r,pos,a[pos]);
   int sur = l+1;
