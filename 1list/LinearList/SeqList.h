@@ -16,24 +16,24 @@ protected:
     int last;
     void reSize(int newSize);
 public:
-        SeqList(int sz=100);
-        SeqList(SeqList<T>& L)=default;
-        ~SeqList();
-        int Size() const {return maxSize;}
-        int Length() const {return last;}
-        int Search(const T& x) const;
-        int Locate(int i) const;
-        bool getData(int,T&)const;
-        void setData(int,const T& );
-        bool IsEmpty() const{return last==0;}
-        bool IsFull() const{return last==maxSize;}
+    SeqList(int sz=100);
+    SeqList(SeqList<T>& L)=default;
+    ~SeqList();
+    int Size() const {return maxSize;}
+    int Length() const {return last;}
+    int Search(const T& x) const;
+    int Locate(int i) const;
+    bool getData(int,T&)const;
+    void setData(int,const T& );
+    bool IsEmpty() const{return last==0;}
+    bool IsFull() const{return last==maxSize;}
 
-        bool Insert(const T&,int pos);
-        bool Remove(int,T&);
+    bool Insert(const T&,int pos);
+    bool Remove(int,T&);
 
-        void Sort(){sort(data,data+last);}//,T must have define operator "<"
-        void input(int cnt=0);//make the list as the input
-        void output();
+    void Sort(){sort(data,data+last);}//,T must have define operator "<"
+    void input(int cnt=0);//make the list as the input
+    void output();
 //        SepList<T> operator = (SepList<T>&);
 };
 template <class T>
